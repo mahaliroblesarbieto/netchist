@@ -43,7 +43,7 @@
                 </div>
             <% } %>
 
-            <form action="UsuarioServlet" method="POST">
+            <form action="<%= request.getContextPath() %>/UsuarioServlet" method="POST">
                 <input type="hidden" name="accion" value="login">
 
                 <div class="form-control mb-4">
@@ -68,7 +68,7 @@
             </form>
 
             <div class="mt-12 text-gray-500">
-                <p>¿Primera vez en NetChis? <a href="registroUsuario.jsp" class="text-white hover:underline">Suscríbete ahora.</a></p>
+                <p>¿Primera vez en NetChis? <a href="<%= request.getContextPath() %>/registroUsuario.jsp" class="text-white hover:underline">Suscríbete ahora.</a></p>
                 <p class="text-xs mt-4">Esta página está protegida por Google reCAPTCHA para comprobar que no eres un robot xd.</p>
             </div>
         </div>
