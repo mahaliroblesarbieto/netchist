@@ -1,0 +1,15 @@
+# Ignore VCS and IDE
+.git
+.gitignore
+nbproject/private/
+*.iml
+.idea/
+.vscode/
+
+# Build outputs not needed for image except build/web (keep it)
+build/classes/
+build/test/
+**/node_modules/
+
+# OS junk
+.DS_Store

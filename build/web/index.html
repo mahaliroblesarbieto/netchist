@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>NetChis - Bienvenido</title>
+        <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
+        <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+        <style>
+
+            .number-stroke {
+                -webkit-text-stroke: 4px #5e5e5e;
+                color: black;
+                font-family: impact, sans-serif;
+                line-height: 0.8;
+                position: absolute;
+                left: -20px;
+                bottom: 0;
+                z-index: 10;
+                text-shadow: 2px 2px 4px rgba(0,0,0,0.8);
+            }
+
+            .poster-card {
+                transition: transform 0.3s ease;
+                z-index: 20;
+                position: relative;
+            }
+
+            .poster-card:hover {
+                transform: scale(1.05);
+                z-index: 30;
+            }
+
+            .hero-overlay-custom {
+                background: linear-gradient(to top, #000000 0%, rgba(0,0,0,0.6) 50%, rgba(0,0,0,0.8) 100%);
+            }
+        </style>
+    </head>
+
+    <body class="bg-black text-white min-h-screen font-sans"> 
+
+        <div class="relative h-[85vh] w-full bg-[url('https://assets.nflxext.com/ffe/siteui/vlv3/c38a2d52-138e-48a3-ab68-36787ece46b3/eeb03fc9-99c6-438e-826d-b41970ce8625/PE-es-20240101-popsignuptwoweeks-perspective_alpha_website_large.jpg')] bg-cover bg-center">
+
+            <div class="absolute inset-0 bg-black/60 hero-overlay-custom"></div>
+
+            <nav class="navbar absolute top-0 left-0 w-full z-50 px-4 md:px-12 py-4">
+                <div class="flex-1">
+                    <a class="text-4xl font-extrabold text-red-600 tracking-tighter cursor-pointer" href="index.jsp">NETCHIS</a>
+                </div>
+                <div class="flex-none gap-4">
+                    <a href="inicioUsuario.jsp" class="btn btn-sm btn-ghost text-white font-bold hover:bg-gray-800">
+                        Ingresar
+                    </a>
+                    <a href="registroUsuario.jsp" class="btn btn-sm bg-red-600 hover:bg-red-700 text-white border-none font-bold px-4">
+                        Registrar Usuario
+                    </a>
+                </div>
+            </nav>
+
+            <div class="relative z-10 flex flex-col items-center justify-center h-full text-center px-4">
+                <h1 class="text-4xl md:text-6xl font-black mb-4 max-w-3xl">Películas, series y mucho más sin límites</h1>
+                <p class="text-xl md:text-2xl mb-6 font-medium">Disfruta donde quieras. Cancela cuando quieras.</p>
+                <p class="text-lg md:text-xl mb-4">¿Quieres ver algo ya? busca la pelicula que desees.</p>
+
+                <div class="flex flex-col md:flex-row gap-2 w-full max-w-2xl items-center">
+                    <input type="email" placeholder="DBZ" class="input input-lg bg-black/40 border border-gray-500 text-white w-full focus:bg-black/60 focus:border-white transition-all rounded" />
+
+                    <a href="PeliculaServlet?accion=listar" class="btn btn-lg bg-red-600 hover:bg-red-700 text-white border-none rounded text-xl px-8 flex items-center gap-2 mt-2 md:mt-0 w-full md:w-auto">                    BUSCAR
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-6 h-6">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="px-4 md:px-12 pb-20 -mt-20 relative z-20">
+            <h2 class="text-2xl font-bold mb-4 text-white drop-shadow-lg">Tendencias</h2>
+
+            <div class="flex gap-4 overflow-x-auto pb-8 scrollbar-hide">
+
+                <div class="flex-none w-48 relative ml-8 cursor-pointer group">
+                    <span class="text-[10rem] font-black number-stroke transform translate-y-2">1</span>
+                    <div class="w-32 h-48 ml-8 rounded overflow-hidden poster-card shadow-lg bg-gray-800">
+                        <img src="https://m.media-amazon.com/images/M/MV5BMGMxMWVhMzAtYWRlOS00YzY1LTlkYTQtYjU5ZDM4MGI1YWFjXkEyXkFqcGc@._V1_.jpg" alt="Pelicula" class="w-full h-full object-cover">
+                    </div>
+                </div>
+
+                <div class="flex-none w-48 relative ml-4 cursor-pointer group">
+                    <span class="text-[10rem] font-black number-stroke transform translate-y-2">2</span>
+                    <div class="w-32 h-48 ml-8 rounded overflow-hidden poster-card shadow-lg bg-gray-800">
+                        <img src="https://m.media-amazon.com/images/M/MV5BYmUzMTk5MGQtZDg5Yy00MWEzLWIzNjUtNWIyMjFjODhiYjcyXkEyXkFqcGc@._V1_.jpg" alt="Pelicula" class="w-full h-full object-cover">
+                    </div>
+                </div>
+
+                <div class="flex-none w-48 relative ml-4 cursor-pointer group">
+                    <span class="text-[10rem] font-black number-stroke transform translate-y-2">3</span>
+                    <div class="w-32 h-48 ml-8 rounded overflow-hidden poster-card shadow-lg bg-gray-800">
+                        <img src="https://m.media-amazon.com/images/M/MV5BMDQ3MWJiZmUtYThhMi00OGM5LWExZGMtOGE2MjMzYWViN2I3XkEyXkFqcGc@._V1_.jpg" alt="Pelicula" class="w-full h-full object-cover">
+                    </div>
+                </div>
+
+                <div class="flex-none w-48 relative ml-4 cursor-pointer group">
+                    <span class="text-[10rem] font-black number-stroke transform translate-y-2">4</span>
+                    <div class="w-32 h-48 ml-8 rounded overflow-hidden poster-card shadow-lg bg-gray-800">
+                        <img src="https://m.media-amazon.com/images/M/MV5BOWEzMDI0MTUtMjQ0Yy00MGRhLWI4YjAtZTgzZTM3NTYxZGJkXkEyXkFqcGc@._V1_.jpg" alt="Pelicula" class="w-full h-full object-cover">
+                    </div>
+                </div>
+
+                <div class="flex-none w-48 relative ml-4 cursor-pointer group">
+                    <span class="text-[10rem] font-black number-stroke transform translate-y-2">5</span>
+                    <div class="w-32 h-48 ml-8 rounded overflow-hidden poster-card shadow-lg bg-gray-800">
+                        <img src="https://m.media-amazon.com/images/M/MV5BNDUzYjY0NmUtMDM4OS00Y2Q5LWJiODYtNTk0ZTk0YjZhMTg1XkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg" alt="Pelicula" class="w-full h-full object-cover">
+                    </div>
+                </div>
+                
+                <div class="flex-none w-48 relative ml-4 cursor-pointer group">
+                    <span class="text-[10rem] font-black number-stroke transform translate-y-2">6</span>
+                    <div class="w-32 h-48 ml-8 rounded overflow-hidden poster-card shadow-lg bg-gray-800">
+                        <img src="https://m.media-amazon.com/images/M/MV5BNDUzYjY0NmUtMDM4OS00Y2Q5LWJiODYtNTk0ZTk0YjZhMTg1XkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg" alt="Pelicula" class="w-full h-full object-cover">
+                    </div>
+                </div>
+                
+                <div class="flex-none w-48 relative ml-4 cursor-pointer group">
+                    <span class="text-[10rem] font-black number-stroke transform translate-y-2">7</span>
+                    <div class="w-32 h-48 ml-8 rounded overflow-hidden poster-card shadow-lg bg-gray-800">
+                        <img src="https://m.media-amazon.com/images/M/MV5BNDUzYjY0NmUtMDM4OS00Y2Q5LWJiODYtNTk0ZTk0YjZhMTg1XkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg" alt="Pelicula" class="w-full h-full object-cover">
+                    </div>
+                </div>
+                
+                <div class="flex-none w-48 relative ml-4 cursor-pointer group">
+                    <span class="text-[10rem] font-black number-stroke transform translate-y-2">8</span>
+                    <div class="w-32 h-48 ml-8 rounded overflow-hidden poster-card shadow-lg bg-gray-800">
+                        <img src="https://m.media-amazon.com/images/M/MV5BNDUzYjY0NmUtMDM4OS00Y2Q5LWJiODYtNTk0ZTk0YjZhMTg1XkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg" alt="Pelicula" class="w-full h-full object-cover">
+                    </div>
+                </div>
+                
+                <div class="flex-none w-48 relative ml-4 cursor-pointer group">
+                    <span class="text-[10rem] font-black number-stroke transform translate-y-2">9</span>
+                    <div class="w-32 h-48 ml-8 rounded overflow-hidden poster-card shadow-lg bg-gray-800">
+                        <img src="https://m.media-amazon.com/images/M/MV5BNDUzYjY0NmUtMDM4OS00Y2Q5LWJiODYtNTk0ZTk0YjZhMTg1XkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg" alt="Pelicula" class="w-full h-full object-cover">
+                    </div>
+                </div>
+                
+                <div class="flex-none w-48 relative ml-4 cursor-pointer group">
+                    <span class="text-[10rem] font-black number-stroke transform translate-y-2">10</span>
+                    <div class="w-32 h-48 ml-8 rounded overflow-hidden poster-card shadow-lg bg-gray-800">
+                        <img src="https://m.media-amazon.com/images/M/MV5BNDUzYjY0NmUtMDM4OS00Y2Q5LWJiODYtNTk0ZTk0YjZhMTg1XkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg" alt="Pelicula" class="w-full h-full object-cover">
+                    </div>
+                </div>
+               
+            </div>
+        </div>
+
+        <div class="container mx-auto px-4 py-16 border-t border-gray-800">
+            <h2 class="text-2xl font-bold mb-8">Más motivos para unirte</h2>
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-6">
+                <div class="bg-gradient-to-br from-gray-800 to-gray-900 p-6 rounded-xl min-h-[250px] relative">
+                    <h3 class="text-xl font-bold mb-4">Disfruta en tu TV</h3>
+                    <p class="text-gray-400">Ve en smart TV, PlayStation, Xbox, Chromecast, Apple TV, reproductores de Blu-ray y más.</p>
+                    <div class="absolute bottom-4 right-4 text-purple-900 opacity-20">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-16 w-16" fill="currentColor" viewBox="0 0 24 24"><path d="M21 3H3c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h5v2h8v-2h5c1.1 0 1.99-.9 1.99-2L23 5c0-1.1-.9-2-2-2zm0 14H3V5h18v12z"/></svg>
+                    </div>
+                </div>
+                <div class="bg-gradient-to-br from-gray-800 to-gray-900 p-6 rounded-xl min-h-[250px] relative">
+                    <h3 class="text-xl font-bold mb-4">Descarga tus series</h3>
+                    <p class="text-gray-400">Guarda tu contenido favorito y siempre tendrás algo para ver offline.</p>
+                    <div class="absolute bottom-4 right-4 text-purple-900 opacity-20">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-16 w-16" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 14.5v-9l6 4.5-6 4.5z"/></svg>
+                    </div>
+                </div>
+                <div class="bg-gradient-to-br from-gray-800 to-gray-900 p-6 rounded-xl min-h-[250px] relative">
+                    <h3 class="text-xl font-bold mb-4">Crea perfiles para niños</h3>
+                    <p class="text-gray-400">Los niños vivirán aventuras con sus personajes favoritos en un espacio diseñado para ellos.</p>
+                </div>
+                <div class="bg-gradient-to-br from-gray-800 to-gray-900 p-6 rounded-xl min-h-[250px] relative">
+                    <h3 class="text-xl font-bold mb-4">Disfruta donde quieras</h3>
+                    <p class="text-gray-400">Películas y series ilimitadas en tu teléfono, tablet, laptop y TV.</p>
+                </div>
+            </div>
+        </div>
+
+    </body>
+</html>
