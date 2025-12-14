@@ -1,6 +1,6 @@
 # Build-less Dockerfile for NetBeans/Ant web app using existing build/web artifacts
-# Runtime: Tomcat 10 (Jakarta), Java 17
-FROM tomcat:10.1-jdk17-temurin
+# Runtime: Tomcat 10 (Jakarta), Java 21 (matches class file version 65)
+FROM tomcat:10.1-jdk21-temurin
 
 # Set working dir
 WORKDIR /usr/local/tomcat
